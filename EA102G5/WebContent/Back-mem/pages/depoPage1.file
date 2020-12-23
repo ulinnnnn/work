@@ -1,0 +1,38 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="Big5"%>
+<%  int rowsPerPage1 = 5;  //每頁的筆數    
+    int rowNumber1=0;      //總筆數
+    int pageNumber1=0;     //總頁數      
+    int whichPage1=1;      //第幾頁
+    int pageIndex1Array1[]=null;
+    int pageIndex1=0; 
+%>
+
+<%  
+    rowNumber1=depoListAll.size();
+    if (rowNumber1%rowsPerPage1 !=0)
+         pageNumber1=rowNumber1/rowsPerPage1 + 1;
+    else pageNumber1=rowNumber1/rowsPerPage1;    
+
+    pageIndex1Array1=new int[pageNumber1]; 
+    for (int i=1 ; i<=pageIndex1Array1.length ; i++)
+         pageIndex1Array1[i-1]=i*rowsPerPage1-rowsPerPage1;
+%>
+
+<%  try {
+       whichPage1 = Integer.parseInt(request.getParameter("whichPage1"));
+       pageIndex1=pageIndex1Array1[whichPage1-1];
+    } catch (NumberFormatException e) { //第一次執行的時候
+       whichPage1=1;
+       pageIndex1=0;
+    } catch (ArrayIndexOutOfBoundsException e) { //總頁數之外的錯誤頁數
+         if (pageNumber1>0){
+              whichPage1=pageNumber1;
+              pageIndex1=pageIndex1Array1[pageNumber1-1];
+         }
+    } 
+%>
+
+<%if (pageNumber1>0){%>
+  <b><font color=red>第<%=whichPage1%>/<%=pageNumber1%>頁</font></b>
+<%}%>
+

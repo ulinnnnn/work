@@ -1,0 +1,26 @@
+.joe .pageHeader .page-title h2{
+  font-family:Microsoft JhengHei ;
+  font-size: 30px;
+  font-weight:bold; 
+} 
+
+.joe .form-body .panel .panel-heading h3, .signUp .panel .panel-heading h3, .lostPassword .panel .panel-heading h3, .logIn .panel .panel-heading h3 {
+  font-family:Microsoft JhengHei;
+  font-weight:bold;
+}
+
+.joe .footer{
+	font-family:Microsoft JhengHei;
+}
+
+.joe .footer .footerLink h5 {
+	color: #E3E157;
+	font-family:Microsoft JhengHei;
+	font-weight:bold;
+}	
+.joe .footer .newsletter h4 {
+	color: #E3E157;
+	font-family:Microsoft JhengHei;
+	font-weight:bold;
+	font-size: 16px;
+}	
